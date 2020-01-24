@@ -19,6 +19,6 @@ npm t
 node .
 ```
 
-Includes examples for Google CloudBuild, CircleCI, Docker, and Kubernetes.
+Includes examples for Google CloudBuild, CircleCI, Docker, and Kubernetes. Find and replace `foo` with the correct strings.
 
 [License](./LICENSE.md)
