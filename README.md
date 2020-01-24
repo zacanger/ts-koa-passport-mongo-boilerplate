@@ -1,6 +1,6 @@
-# ts-koa-passport-mongo-example
+# ts-koa-passport-mongo-boilerplate
 
-Auth microservice example.
+Auth microservice boilerplate.
 
 TypeScript, Passport, Koa.
 
