@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: auth
+  labels:
+    co.foo.service: auth
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        co.foo.service: auth
+    spec:
+      restartPolicy: Always
+      containers:
+      - image: gcr.io/foo/auth:latest
+        name: auth
+        ports:
+        - containerPort: 4000
+        env:
+          - name: MONGO_URI
+            value: 'mongodb://mongo-0.mongo,mongo-1.mongo,mongo-2.mongo:27017/auth'

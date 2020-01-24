@@ -1,0 +1,16 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/foo/auth:$TAG_NAME', '.']
+  timeout: 600s
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/foo/auth:$TAG_NAME']
+ - name: 'gcr.io/cloud-builders/kubectl'
+   args:
+    - set
+    - image
+    - deployment
+    - auth
+    - auth=gcr.io/foo/auth:$TAG_NAME
+  env:
+    - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+    - 'CLOUDSDK_CONTAINER_CLUSTER=bar'
