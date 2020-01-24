@@ -80,8 +80,10 @@ passport.use(
             const newUser = new User()
 
             newUser.local.email = email
+            // @ts-ignore
             newUser.local.password = newUser.generateHash(password)
 
+            // @ts-ignore
             newUser.save((err) => {
               if (err) {
                 return done(err)
@@ -91,6 +93,7 @@ passport.use(
             })
           }
         })
+        // @ts-ignore
       } else if (!ctx.user.local.email) {
         // if the user is logged in but has no local account
         // they're trying to connect a local account
@@ -104,8 +107,11 @@ passport.use(
             return done(null, false)
           } else {
             const user = ctx.user
+            // @ts-ignore
             user.local.email = email
+            // @ts-ignore
             user.local.password = user.generateHash(password)
+            // @ts-ignore
             user.save((err) => {
               if (err) {
                 return done(err)
@@ -146,6 +152,7 @@ passport.use(
                 profile.emails[0].value || ''
               ).toLowerCase()
 
+              // @ts-ignore
               user.save((err) => {
                 if (err) {
                   return done(err)
@@ -168,6 +175,7 @@ passport.use(
               profile.emails[0].value || ''
             ).toLowerCase()
 
+            // @ts-ignore
             newUser.save((err) => {
               if (err) {
                 return done(err)
@@ -186,6 +194,7 @@ passport.use(
         user.facebook.name = `${profile.name.givenName} ${profile.name.familyName}`
         user.facebook.email = (profile.emails[0].value || '').toLowerCase()
 
+        // @ts-ignore
         user.save((err) => {
           if (err) {
             return done(err)
@@ -215,6 +224,7 @@ passport.use(
               user.twitter.username = profile.username
               user.twitter.displayName = profile.displayName
 
+              // @ts-ignore
               user.save((err) => {
                 if (err) {
                   return done(err)
@@ -233,6 +243,7 @@ passport.use(
             newUser.twitter.username = profile.username
             newUser.twitter.displayName = profile.displayName
 
+            // @ts-ignore
             newUser.save((err) => {
               if (err) {
                 return done(err)
@@ -250,6 +261,7 @@ passport.use(
         user.twitter.username = profile.username
         user.twitter.displayName = profile.displayName
 
+        // @ts-ignore
         user.save((err) => {
           if (err) {
             return done(err)
@@ -279,6 +291,7 @@ passport.use(
               user.google.name = profile.displayName
               user.google.email = (profile.emails[0].value || '').toLowerCase()
 
+              // @ts-ignore
               user.save((err) => {
                 if (err) {
                   return done(err)
@@ -297,6 +310,7 @@ passport.use(
             newUser.google.name = profile.displayName
             newUser.google.email = (profile.emails[0].value || '').toLowerCase()
 
+            // @ts-ignore
             newUser.save((err) => {
               if (err) {
                 return done(err)
@@ -314,6 +328,7 @@ passport.use(
         user.google.name = profile.displayName
         user.google.email = (profile.emails[0].value || '').toLowerCase()
 
+        // @ts-ignore
         user.save((err) => {
           if (err) {
             return done(err)

@@ -1,6 +1,6 @@
 import * as http from 'http'
 import Koa from 'koa'
-import Router from 'koa-router'
+import Router from '@koa/router'
 import mid from 'koa-mid'
 import passport from 'koa-passport'
 import session from 'koa-session'

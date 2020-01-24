@@ -13,7 +13,6 @@
     "migrate": "echo 'do migrations'",
     "prebuild": "npm t",
     "preversion": "npm run build",
-    "setup": "npm run createdb && npm run migrate",
     "start": "docker-compose up",
     "stop": "docker-compose down",
     "test": "npm run test:ts && npm run test:lint && sortpack",
