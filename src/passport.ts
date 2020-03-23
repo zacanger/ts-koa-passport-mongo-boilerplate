@@ -1,3 +1,5 @@
+/* eslint-disable unicorn/no-keyword-prefix */
+
 import passport from 'koa-passport'
 import { Strategy as GoogleStrategy } from 'passport-google-oauth20'
 import { Strategy as TwitterStrategy } from 'passport-twitter'
