@@ -1,5 +1,11 @@
 # ts-koa-passport-mongo-boilerplate
 
+## DEPRECATED
+
+I don't really recommend using Mongo, and am not able to thoroughly test the
+Passport integrations since I don't have accounts on most social media sites.
+Use if you like, but I won't be updating this.
+
 Auth microservice boilerplate.
 
 TypeScript, Passport, Koa.
